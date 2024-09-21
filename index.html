@@ -1,89 +1,46 @@
-<!-- python data extraction -->
-      import csv
-      csv_file = "Alex Nemecek18820260.csv"
-      output_file = "index.html"
-      <!-- Open the CSV file and extract the data -->
-      with open(csv_file, newline='', encoding='utf-8') as file:
-         reader = csv.reader(file)
-         data = list(reader)
-      
-      
-      <!-- Sample code for extracting data from a row-->
-      <!-- Start extracting data from row 6 (index 5, since Python indexing starts at 0)-->
-      for row in data[5:]:
-        name = row[0]  # Column A - Name
-        overall_place = row[1]  # Column B - Overall Place
-        time = row[2]  # Column C - Time
-        date = row[3]  # Column D - Date
-        meet = row[4]  # Column E - Meet
-        comment = row[5]  # Column F - Comment
-        photo = row[6]  # Column G - Photo
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title> Cross Country Athlete Progres </title>
+    </head>
+    <body>
+        <section>
+            <h3>Athlete Overview</h3>
 
-    <!--# For demonstration, print out the extracted values-->
-      print(f"Name: {name}, Place: {overall_place}, Time: {time}, Date: {date}, Meet: {meet}, Comment: {comment}, Photo: {photo}")
-
-
-      <!-- # Extract the data from the CSV -->
-      meet_name = data[1][0]  # Column A - h1 (Meet Name)
-      meet_date = data[1][1]  # Column B - h2 (Meet Date)
-      team_results_link = data[1][2]  # Column C - hyperlink for the team-results section
-      folder_name = data[1][3]  # Column D - folder name used in photo-gallery links
-      race_comments = data[1][4]  # Column E - race-comments section
-      
-      
-      <!-- # print(f"meet name {meet_name}")
-      # print(f"meet_date {meet_date}")
-      # print(f"folder_name {folder_name}")
-      # print(f"race_comments{race_comments}")
-       -->
-      
-      <!-- # Athlete details start from row 6 -->
-      athletes = data[5:]
-      # Add each athlete's information to the list
-      for athlete in athletes[5:]:
-      athlete_name = athlete[5][0]  # Column A - athlete-name
-      # print(f"name {athlete_name}")
-      athlete_place = athlete[5][1]  # Column B (updated) - athlete-place
-      # print(f"place {athlete_place}")
-      athlete_grade = athlete[5][2]  # Column C (updated) - athlete-grade
-      # print(f"grade {athlete_grade}")
-      athlete_time = athlete[5][3]  # Column D (updated) - athlete-time
-      # print(f"time {athlete_time}")
-      athlete_date = athlete[5][4]  # Column E (updated) - athlete-date
-      # print(f"date {athlete_date}")
-      athlete_meet = athlete[5][5] # Column F - athlete-meet
-      # print(f"meet {athlete_meet})
-      athlete_comments = athlete[5][6] # Column G - athlete-comments
-      # print(f"comments {athlete_comments})
-      athlete_photo = athlete[5][7] # Column G - athlete-photo
-      # print(f"photo {athlete_photo})
-      
-
-      
-
-html_content = f'''<!DOCTYPE html>
-<html lang="en" dir="ltr">  
-      <!-- # Start building the HTML structure -->
-      <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel = "stylesheet" href = "css/reset.css">
-         <link rel = "stylesheet" href = "css/style.css">
-         <title>{meet_name} Country Meet</title>
-      </head>
-      <body>
-      
-      
-         <header>
-             <h1>{meet_name}</h1>
-             <h2>{meet_date}</h2>
-         </header>
-      
-      
-
-    </body>
-    <footer>
-    <p>University of Michigan School of Information <br/>
-      &copy; Fanny, Moe, Shawn - Web Design 2024</p>
-  </footer>
-</html>
+        <div class="athlete-overview">
+            <h4>Alex Nemecek</h4>
+            <p>Grade: 9.0</p>
+            <p>Bio: Brief bio about the athlete.</p>
+            
+        <p>Last Meet:  Test Meet on Nov 12 with a time of 20:02.1. </p>
+    
+            <div class="gallery">
+                <img src=" AlexNemecek_BretClementsBathInvitational(J.V.)_.).jpg" alt="Alex Nemecek" width="100" height="100">
+            </div>
+            <p>Notes from caoch:  Comments from coach here</p>
+        </div>
+    
+        <div class="athlete-overview">
+            <h4>Adrienne Stewart</h4>
+            <p>Grade: 9.0</p>
+            <p>Bio: Brief bio about the athlete.</p>
+            
+        <p>Last Meet:  Test Meet on Nov 12 with a time of 22:40.6. </p>
+    
+            <div class="gallery">
+                <img src=" AdrienneStewart_SECJamboree#1(JuniorVarsity)_y).jpg" alt="Adrienne Stewart" width="100" height="100">
+            </div>
+            <p>Notes from caoch:  Awesome race! Let's look at where we can shave off a few more seconds.</p>
+        </div>
+    
+        </section>
+        <footer>
+            <p>University of Michigan School of Information <br/>
+                &copy; Fanny, Moe, Shawn - Web Design 2024 </p>
+        </footer>
+        </body>
+        </html>
+    
